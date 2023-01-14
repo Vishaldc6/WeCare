@@ -16,7 +16,7 @@ import CustomButton from '../../components/CustomButton';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
 import Colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import { size } from '../../styles/size';
+import {size} from '../../styles/size';
 import GlobalStyles from '../../styles/GlobalStyles';
 
 const Dots = ({selected}) => {
@@ -28,7 +28,7 @@ const Dots = ({selected}) => {
         height: 6,
         borderRadius: 15,
         marginHorizontal: 3,
-        backgroundColor: selected ? Colors.primary_color : Colors.grey,
+        backgroundColor: selected ? Colors.primary_color : Colors.darkgray,
       }}
     />
   );
@@ -64,13 +64,13 @@ const Skip = ({skipLabel, ...props}) => (
 );
 
 const Done = ({...props}) => (
-  <View style={{bottom: 10,width:size.width,flex:1}}>
+  <View style={{bottom: 10, width: size.width, flex: 1}}>
     <CustomButton title={'GET STARTED'} {...props} />
   </View>
 );
 const OnboardingScreen = props => {
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
       <Onboarding
         bottomBarColor={Colors.white}
         skipToPage={2}
@@ -92,8 +92,7 @@ const OnboardingScreen = props => {
                 source={require('../../assets/images/Onboarding1.gif')}
               />
             ),
-            title:
-              'Your Go-to Health Application',
+            title: 'Your Go-to Health Application',
             subtitle: 'Your complete healthcare companion, in your pocket.',
           },
           {
@@ -127,10 +126,6 @@ const OnboardingScreen = props => {
 };
 
 const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: Colors.white,
-  },
   image: {
     resizeMode: 'cover',
     height: wp('90'),
@@ -144,12 +139,14 @@ const styles = StyleSheet.create({
     ...fonts.h1,
     bottom: 50,
     textAlign: 'center',
+    // backgroundColor: 'red',
   },
   subTxt: {
     //   fontFamily: 'Nexa-Trial-Regular',
     ...fonts.h2,
     bottom: 50,
     textAlign: 'center',
+    // backgroundColor: 'blue',
   },
 });
 

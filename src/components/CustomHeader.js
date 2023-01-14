@@ -5,17 +5,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
-const CustomHeader = () => {
+const CustomHeader = props => {
   return (
     <View style={styles.container}>
-      <Icon name={'chevron-left'} size={25} style={styles.icon} />
+      {props.back && (
+        <Icon name={'chevron-left'} size={25} style={styles.icon} />
+      )}
       <Text numberOfLines={1} style={{...fonts.h1, flex: 1}}>
-        CustomHeader
+        {props.title}
       </Text>
       <View style={styles.postIconContainer}>
-        <Icon name={'tag'} size={25} style={styles.icon} />
-        <Icon name={'search'} size={25} style={styles.icon} />
-        <Icon name={'shopping-cart'} size={25} style={styles.icon} />
+        {props.tag && <Icon name={'tag'} size={25} style={styles.icon} />}
+        {props.search && <Icon name={'search'} size={25} style={styles.icon} />}
+        {props.cart && (
+          <Icon name={'shopping-cart'} size={25} style={styles.icon} />
+        )}
       </View>
     </View>
   );
@@ -25,10 +29,11 @@ const styles = StyleSheet.create({
   container: {
     // backgroundColor: 'blue',
     height: size.height / 15,
-    width: size.width,
+    // width: size.width,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: 5,
   },
   postIconContainer: {
     flexDirection: 'row',

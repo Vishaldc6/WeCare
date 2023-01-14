@@ -19,7 +19,7 @@ import CheckBox from 'react-native-check-box';
 const SignInScreen = props => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
-  const [isCheck, setisCheck] = useState(false)
+  const [isCheck, setisCheck] = useState(false);
   const [usernameError, setusernameError] = useState('');
   const [passwordError, setpasswordError] = useState('');
 
@@ -33,7 +33,7 @@ const SignInScreen = props => {
   }, []);
 
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
       <ImageBackground
         source={require('../../assets/images/BackGroundImage.jpg')}
         style={styles.bgImage}>
@@ -78,17 +78,18 @@ const SignInScreen = props => {
                 iconName={'key'}
               />
               <Text style={styles.errorText}>{passwordError}</Text>
-              <View style={{...GlobalStyles.rowContainer,margin:10}}>
-               <View style={GlobalStyles.rowContainer}>
-               <CheckBox 
-                isChecked={isCheck}
-                onClick={()=>{
-                  setisCheck(!isCheck)
-                }}
-                checkBoxColor={colors.primary_color}
-                />
-                <View style={{width:10}}/>
-                <Text style={fonts.h3}>As Doctor</Text></View>
+              <View style={{...GlobalStyles.rowContainer, margin: 10}}>
+                <View style={GlobalStyles.rowContainer}>
+                  <CheckBox
+                    isChecked={isCheck}
+                    onClick={() => {
+                      setisCheck(!isCheck);
+                    }}
+                    checkBoxColor={colors.primary_color}
+                  />
+                  <View style={{width: 10}} />
+                  <Text style={fonts.h3}>As Doctor</Text>
+                </View>
                 <Text
                   onPress={() => {
                     props.navigation.navigate(ScreenNames.ForgotPasswordScreen);
@@ -107,7 +108,7 @@ const SignInScreen = props => {
                     //   setusernameError('* Please enter Username');
                     //   setpasswordError('* Please enter Password');
                     // }
-                    props.navigation.navigate(ScreenNames.Home)
+                    props.navigation.navigate(ScreenNames.Home);
                   }}
                 />
               </View>

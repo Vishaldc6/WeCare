@@ -35,7 +35,7 @@ const ForgotPasswordScreen = props => {
   }, []);
 
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
       <ImageBackground
         source={require('../../assets/images/BackGroundImage.jpg')}
         style={styles.bgImage}>

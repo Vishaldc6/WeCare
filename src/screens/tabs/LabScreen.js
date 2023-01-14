@@ -3,13 +3,14 @@ import React from 'react';
 import GlobalStyles from '../../styles/GlobalStyles';
 import CustomHeader from '../../components/CustomHeader';
 
-const OrderScreen = () => {
+const LabScreen = () => {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <CustomHeader cart={true} title={'My Orders'} />
-      <Text>OrderScreen</Text>
+      <CustomHeader search={true} title={'Laboratory'} />
+
+      <Text>LabScreen</Text>
     </View>
   );
 };
 
-export default OrderScreen;
+export default LabScreen;

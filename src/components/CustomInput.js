@@ -6,17 +6,17 @@ import fonts from '../styles/fonts';
 
 const CustomInput = props => {
   const [isFocus, setisFocus] = useState(false);
-  const [isVisible, setisVisible] = useState(false)
+  const [isVisible, setisVisible] = useState(false);
 
   return (
     <View style={{margin: 3}}>
-      <Text style={{...fonts.h3,marginLeft:10}}>{props.title}</Text>
+      <Text style={{...fonts.h3, marginLeft: 10}}>{props.title}</Text>
       <View style={styles.inputContainer}>
         <View style={styles.iconBox}>
           <Icon
             name={props.iconName}
             size={22}
-            color={isFocus ? Colors.primary_color : Colors.black}
+            color={isFocus ? Colors.primary_color : Colors.darkgray}
             style={{alignSelf: 'center'}}
           />
         </View>
@@ -30,7 +30,7 @@ const CustomInput = props => {
           style={
             isFocus
               ? styles.input
-              : {...styles.input, borderBottomColor: Colors.grey}
+              : {...styles.input, borderBottomColor: Colors.darkgray}
           }
           placeholder={props.placeholder}
           value={props.value}
@@ -38,17 +38,18 @@ const CustomInput = props => {
           keyboardType={props.keyboardType}
           secureTextEntry={isVisible ? false : true}
         />
-         <View style={styles.iconBox}>
-        { props.passwordField &&  <Icon
-          onPress={()=>{
-            setisVisible(!isVisible)
-          }}
-            name={isVisible ? 'eye': 'eye-slash'}
-            size={22}
-            color={isVisible ? Colors.primary_color : Colors.black}
-            style={{alignSelf: 'center'}}
-          />
-}
+        <View style={styles.iconBox}>
+          {props.passwordField && (
+            <Icon
+              onPress={() => {
+                setisVisible(!isVisible);
+              }}
+              name={isVisible ? 'eye' : 'eye-slash'}
+              size={22}
+              color={isVisible ? Colors.primary_color : Colors.darkgray}
+              style={{alignSelf: 'center'}}
+            />
+          )}
         </View>
       </View>
     </View>
@@ -70,10 +71,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   iconBox: {
-    alignSelf: 'center', 
-    height: 25, 
-    width: 25, 
-    marginHorizontal: 10
+    alignSelf: 'center',
+    height: 25,
+    width: 25,
+    marginHorizontal: 10,
   },
 });
 

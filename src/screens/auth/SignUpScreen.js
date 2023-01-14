@@ -22,7 +22,7 @@ const SignUpScreen = props => {
   const [username, setusername] = useState('');
   const [password, setpassword] = useState('');
   const [confirmPassword, setconfirmPassword] = useState('');
-  const [isCheck, setisCheck] = useState(false)
+  const [isCheck, setisCheck] = useState(false);
 
   const [emailError, setemailError] = useState('');
   const [usernameError, setusernameError] = useState('');
@@ -42,7 +42,7 @@ const SignUpScreen = props => {
   }, []);
 
   return (
-    <View style={GlobalStyles.mainContainer}>
+    <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
       <ImageBackground
         source={require('../../assets/images/BackGroundImage.jpg')}
         style={styles.bgImage}>
@@ -108,17 +108,18 @@ const SignUpScreen = props => {
                 iconName={'key'}
               />
               <Text style={styles.errorText}>{confirmPasswordError}</Text>
-              <View style={{...GlobalStyles.rowContainer,margin:10}}>
-               <View style={GlobalStyles.rowContainer}>
-               <CheckBox
-                isChecked={isCheck}
-                onClick={()=>{
-                  setisCheck(!isCheck)
-                }}
-                checkBoxColor={colors.primary_color}
-                />
-                <View style={{width:10}}/>
-                <Text style={fonts.h3}>As Doctor</Text></View>
+              <View style={{...GlobalStyles.rowContainer, margin: 10}}>
+                <View style={GlobalStyles.rowContainer}>
+                  <CheckBox
+                    isChecked={isCheck}
+                    onClick={() => {
+                      setisCheck(!isCheck);
+                    }}
+                    checkBoxColor={colors.primary_color}
+                  />
+                  <View style={{width: 10}} />
+                  <Text style={fonts.h3}>As Doctor</Text>
+                </View>
                 <Text
                   onPress={() => {
                     props.navigation.navigate(ScreenNames.ForgotPasswordScreen);

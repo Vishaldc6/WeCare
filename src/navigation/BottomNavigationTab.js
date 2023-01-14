@@ -4,7 +4,8 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import ScreenNames from './screenNames/ScreenNames';
 import HomeScreen from '../screens/tabs/HomeScreen';
 import OrderScreen from '../screens/tabs/OrderScreen';
-import CartScreen from '../screens/tabs/CartScreen';
+import DoctorScreen from '../screens/tabs/DoctorScreen';
+import LabScreen from '../screens/tabs/LabScreen';
 import ProfileScreen from '../screens/tabs/ProfileScreen';
 import colors from '../styles/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -15,7 +16,17 @@ const Tab = createMaterialBottomTabNavigator();
 const BottomNavigationTab = () => {
   return (
     <Tab.Navigator
-      //   labeled={false}
+      barStyle={{
+        borderWidth: 0.2,
+        backgroundColor: 'transparent',
+        // borderRadius: 20,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+      }}
+      sceneAnimationType={'shifting'}
+      shifting={true}
+      // screenOptions={{tabBarColor: colors.grey}}
+      // labeled={false}
       activeColor={colors.primary_color}
       initialRouteName={ScreenNames.HomeScreen}>
       <Tab.Screen
@@ -38,16 +49,16 @@ const BottomNavigationTab = () => {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name={ScreenNames.DoctorScreen}
-        component={OrderScreen}
+        component={DoctorScreen}
         options={{
           tabBarLabel: 'Doctors',
           tabBarIcon: ({focused, color}) => (
             <Fontisto name="doctor" size={25} color={color} />
           ),
         }}
-      />
+      /> */}
       {/* <Tab.Screen
         name={ScreenNames.CartScreen}
         component={CartScreen}
@@ -60,7 +71,7 @@ const BottomNavigationTab = () => {
       /> */}
       <Tab.Screen
         name={ScreenNames.LabScreen}
-        component={ProfileScreen}
+        component={LabScreen}
         options={{
           tabBarLabel: 'Labs',
           tabBarIcon: ({focused, color}) => (
