@@ -5,6 +5,8 @@ import {
   ImageBackground,
   SafeAreaView,
   Alert,
+  KeyboardAvoidingView,
+  ScrollView,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import CustomButton from '../../components/CustomButton';
@@ -108,7 +110,8 @@ const SignUpScreen = props => {
                 iconName={'key'}
               />
               <Text style={styles.errorText}>{confirmPasswordError}</Text>
-              <View style={{...GlobalStyles.rowContainer, margin: 10}}>
+              <View
+                style={{...GlobalStyles.rowContainer, marginHorizontal: 10}}>
                 <View style={GlobalStyles.rowContainer}>
                   <CheckBox
                     isChecked={isCheck}
@@ -120,15 +123,8 @@ const SignUpScreen = props => {
                   <View style={{width: 10}} />
                   <Text style={fonts.h3}>As Doctor</Text>
                 </View>
-                <Text
-                  onPress={() => {
-                    props.navigation.navigate(ScreenNames.ForgotPasswordScreen);
-                  }}
-                  style={styles.linkText}>
-                  Forgot Password ?
-                </Text>
               </View>
-              <View style={{height: 20}} />
+              <View style={{height: 10}} />
               <View style={{marginHorizontal: 10}}>
                 <CustomButton
                   title={'Sign up'}
@@ -150,7 +146,7 @@ const SignUpScreen = props => {
                   }}
                 />
               </View>
-              <View style={{height: 20}} />
+              <View style={{height: 10}} />
               <Text style={{...fonts.h3, alignSelf: 'center'}}>
                 Already have an Account ?{' '}
                 <Text
@@ -161,7 +157,7 @@ const SignUpScreen = props => {
                   Sign In here
                 </Text>
               </Text>
-              <View style={{height: 30}} />
+              <View style={{height: 10}} />
             </KeyboardAwareScrollView>
           </View>
         </SafeAreaView>

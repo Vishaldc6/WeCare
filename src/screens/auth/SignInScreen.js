@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  KeyboardAvoidingView,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {size} from '../../styles/size';
@@ -78,7 +79,8 @@ const SignInScreen = props => {
                 iconName={'key'}
               />
               <Text style={styles.errorText}>{passwordError}</Text>
-              <View style={{...GlobalStyles.rowContainer, margin: 10}}>
+              <View
+                style={{...GlobalStyles.rowContainer, marginHorizontal: 10}}>
                 <View style={GlobalStyles.rowContainer}>
                   <CheckBox
                     isChecked={isCheck}
@@ -98,7 +100,7 @@ const SignInScreen = props => {
                   Forgot Password ?
                 </Text>
               </View>
-              <View style={{height: 20}} />
+              <View style={{height: 10}} />
               <View style={{marginHorizontal: 10}}>
                 <CustomButton
                   title={'Sign in'}
@@ -112,7 +114,7 @@ const SignInScreen = props => {
                   }}
                 />
               </View>
-              <View style={{height: 20}} />
+              <View style={{height: 10}} />
               <Text style={{...fonts.h3, alignSelf: 'center'}}>
                 New User ?{' '}
                 <Text
@@ -123,7 +125,7 @@ const SignInScreen = props => {
                   Sign Up here
                 </Text>
               </Text>
-              <View style={{height: 30}} />
+              <View style={{height: 10}} />
             </KeyboardAwareScrollView>
           </View>
         </SafeAreaView>

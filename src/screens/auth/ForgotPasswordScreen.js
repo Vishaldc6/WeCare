@@ -51,6 +51,7 @@ const ForgotPasswordScreen = props => {
               position: 'absolute',
               // top:300,
               bottom: -size.height,
+              // bottom: -10,
             }}>
             <KeyboardAwareScrollView
               keyboardShouldPersistTaps={'always'}
@@ -111,8 +112,8 @@ const ForgotPasswordScreen = props => {
                     }
                   }}
                 />
+                <View style={{height: 10}} />
               </View>
-              <View style={{height: 50}} />
             </KeyboardAwareScrollView>
           </View>
         </SafeAreaView>
