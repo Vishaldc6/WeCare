@@ -62,7 +62,6 @@ const SignUpScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  // top:300,
                   bottom: -size.height,
                 }}>
                 {/* <KeyboardAwareScrollView
@@ -176,13 +175,9 @@ const SignUpScreen = props => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    // backgroundColor: 'red',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   bgImage: {
     flex: 1,
-    // opacity: 0.5,
   },
   errorText: {
     color: colors.red,

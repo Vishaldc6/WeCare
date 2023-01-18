@@ -54,14 +54,8 @@ const ForgotPasswordScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  // top:300,
                   bottom: -size.height,
-                  // bottom: -10,
                 }}>
-                {/* <KeyboardAwareScrollView
-              keyboardShouldPersistTaps={'always'}
-              style={styles.mainContainer}
-              enableOnAndroid={true}> */}
                 <Text style={fonts.h1}>Forgot Password</Text>
                 <View style={{height: 20}} />
                 <CustomInput
@@ -119,7 +113,6 @@ const ForgotPasswordScreen = props => {
                   />
                   <View style={{height: 10}} />
                 </View>
-                {/* </KeyboardAwareScrollView> */}
               </View>
             </TouchableWithoutFeedback>
           </KeyboardAvoidingView>
@@ -132,13 +125,9 @@ const ForgotPasswordScreen = props => {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    // backgroundColor: 'red',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   bgImage: {
     flex: 1,
-    // opacity: 0.5,
   },
   errorText: {
     color: colors.red,

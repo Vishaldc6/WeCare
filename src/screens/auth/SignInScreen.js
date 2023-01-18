@@ -52,13 +52,8 @@ const SignInScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  // top:300,
                   bottom: -size.height,
                 }}>
-                {/* <KeyboardAwareScrollView
-              keyboardShouldPersistTaps={'always'}
-              style={styles.mainContainer}
-              enableOnAndroid={true}> */}
                 <Text style={fonts.h1}>Wellcome</Text>
                 <View style={{height: 20}} />
                 <CustomInput
@@ -132,7 +127,6 @@ const SignInScreen = props => {
                   </Text>
                 </Text>
                 <View style={{height: 10}} />
-                {/* </KeyboardAwareScrollView> */}
               </View>
             </TouchableWithoutFeedback>
           </KeyboardAvoidingView>
@@ -145,7 +139,6 @@ const SignInScreen = props => {
 const styles = StyleSheet.create({
   bgImage: {
     flex: 1,
-    // opacity: 0.5,
   },
   errorText: {
     color: colors.red,
