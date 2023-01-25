@@ -62,7 +62,7 @@ const SignUpScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  bottom: -size.height,
+                  bottom: -size.height - size.height / 12,
                 }}>
                 {/* <KeyboardAwareScrollView
             
@@ -81,6 +81,7 @@ const SignUpScreen = props => {
                   keyboardType={'email-address'}
                   iconName={'envelope-o'}
                 />
+
                 <Text style={styles.errorText}>{emailError}</Text>
                 <CustomInput
                   onChange={val => {
@@ -89,6 +90,7 @@ const SignUpScreen = props => {
                   value={username}
                   title={'Username'}
                   placeholder={'Enter Username'}
+                  keyboardType={'email-address'}
                   iconName={'user-circle-o'}
                 />
                 <Text style={styles.errorText}>{usernameError}</Text>
@@ -161,7 +163,7 @@ const SignUpScreen = props => {
                     Sign In here
                   </Text>
                 </Text>
-                <View style={{height: 10}} />
+                <View style={{height: size.height / 10}} />
                 {/* </KeyboardAwareScrollView> */}
               </View>
             </TouchableWithoutFeedback>

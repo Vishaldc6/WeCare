@@ -5,10 +5,17 @@ import {size} from '../styles/size';
 import fonts from '../styles/fonts';
 import colors from '../styles/colors';
 
-const CustomSearchBar = () => {
+const CustomSearchBar = props => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Search medicine" style={{...fonts.h3, flex: 1}} />
+      {props.navi && (
+        <Icon name={'chevron-left'} size={25} style={styles.icon} />
+      )}
+      <TextInput
+        onPressIn={props.onPress}
+        placeholder="Search medicine"
+        style={{...fonts.h3, flex: 1}}
+      />
       <View style={{width: 15}} />
       <Icon name={'search'} size={25} style={styles.icon} />
     </View>
@@ -17,10 +24,10 @@ const CustomSearchBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'red',
+    backgroundColor: colors.lightgrey,
     height: size.height / 15,
     // width: size.width,
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: colors.darkgray,
     borderRadius: 10,
     flexDirection: 'row',

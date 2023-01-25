@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderBottomColor: Colors.primary_color,
     borderBottomWidth: 1.5,
-    height: 40,
+    // height: 40,
     marginHorizontal: 5,
   },
   iconBox: {

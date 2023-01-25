@@ -52,17 +52,18 @@ const SignInScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  bottom: -size.height,
+                  bottom: -size.height - size.height / 12,
                 }}>
                 <Text style={fonts.h1}>Wellcome</Text>
                 <View style={{height: 20}} />
                 <CustomInput
-                  value={username}
                   onChange={val => {
                     setusername(val);
                   }}
+                  value={username}
                   title={'Username'}
                   placeholder={'Enter Username'}
+                  keyboardType={'email-address'}
                   iconName={'user-circle-o'}
                 />
                 <Text style={styles.errorText}>{usernameError}</Text>
@@ -126,7 +127,7 @@ const SignInScreen = props => {
                     Sign Up here
                   </Text>
                 </Text>
-                <View style={{height: 10}} />
+                <View style={{height: size.height / 10}} />
               </View>
             </TouchableWithoutFeedback>
           </KeyboardAvoidingView>
