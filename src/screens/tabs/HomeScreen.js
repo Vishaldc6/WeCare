@@ -1,4 +1,10 @@
-import {View, Text, TouchableWithoutFeedback, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  StyleSheet,
+  Image,
+} from 'react-native';
 import React from 'react';
 import GlobalStyles from '../../styles/GlobalStyles';
 import CustomHeader from '../../components/CustomHeader';
@@ -9,6 +15,8 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import CustomButton from '../../components/CustomButton';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
+import Swiper from 'react-native-swiper';
+import {Images} from '../../assets/images';
 
 const Card = ({title, icon, onPress}) => (
   <TouchableWithoutFeedback onPress={onPress}>
@@ -29,6 +37,12 @@ const Card = ({title, icon, onPress}) => (
   </TouchableWithoutFeedback>
 );
 
+const Banner = ({image}) => (
+  <View style={styles.slide}>
+    <Image source={image} style={{flex: 1, resizeMode: 'contain'}} />
+  </View>
+);
+
 const HomeScreen = props => {
   return (
     <View style={GlobalStyles.mainContainer}>
@@ -38,7 +52,7 @@ const HomeScreen = props => {
       {/* SearchBar */}
       <CustomSearchBar
         onPress={() => {
-          props.navigation.push(ScreenNames.SearchScreen);
+          props.navigation.navigate(ScreenNames.SearchScreen);
         }}
       />
 
@@ -56,6 +70,7 @@ const HomeScreen = props => {
           icon={'pills'}
           onPress={() => {
             console.log('Medicine Page');
+            props.navigation.navigate(ScreenNames.MedicineScreen);
           }}
         />
         <Card
@@ -94,6 +109,18 @@ const HomeScreen = props => {
         </View>
         {/* <CustomButton title={'Upload'} /> */}
       </View>
+      <View
+        style={{
+          marginVertical: 5,
+          height: size.height / 5,
+          // backgroundColor: 'red',
+        }}>
+        <Swiper dotStyle={{bottom: -45}} activeDotStyle={{bottom: -45}}>
+          <Banner image={Images.banners5} />
+          <Banner image={Images.banners} />
+          <Banner image={Images.banners6} />
+        </Swiper>
+      </View>
       <Text>HomeScreen</Text>
     </View>
   );
@@ -131,6 +158,11 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

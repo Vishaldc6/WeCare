@@ -81,7 +81,7 @@ const BottomNavigationTab = () => {
           ),
         }}
       /> */}
-      <Tab.Screen
+      {/* <Tab.Screen
         name={ScreenNames.SearchScreen}
         component={SearchScreen}
         options={{
@@ -90,7 +90,7 @@ const BottomNavigationTab = () => {
             <Fontisto name="search" size={size.height / 35} color={color} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name={ScreenNames.ProfileScreen}
         component={ProfileScreen}

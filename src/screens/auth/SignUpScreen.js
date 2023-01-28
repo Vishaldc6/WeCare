@@ -20,6 +20,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
 import GlobalStyles from '../../styles/GlobalStyles';
 import CheckBox from 'react-native-check-box';
+import {Images} from '../../assets/images';
 
 const SignUpScreen = props => {
   const [email, setemail] = useState('');
@@ -47,9 +48,7 @@ const SignUpScreen = props => {
 
   return (
     <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
-      <ImageBackground
-        source={require('../../assets/images/BackGroundImage.jpg')}
-        style={styles.bgImage}>
+      <ImageBackground source={Images.backgroundImage} style={styles.bgImage}>
         <SafeAreaView>
           <KeyboardAvoidingView>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

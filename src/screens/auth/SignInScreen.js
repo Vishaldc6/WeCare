@@ -18,6 +18,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
 import GlobalStyles from '../../styles/GlobalStyles';
 import CheckBox from 'react-native-check-box';
+import {Images} from '../../assets/images';
 
 const SignInScreen = props => {
   const [username, setusername] = useState('');
@@ -37,9 +38,7 @@ const SignInScreen = props => {
 
   return (
     <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
-      <ImageBackground
-        source={require('../../assets/images/BackGroundImage.jpg')}
-        style={styles.bgImage}>
+      <ImageBackground source={Images.backgroundImage} style={styles.bgImage}>
         <SafeAreaView>
           <KeyboardAvoidingView>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -112,7 +111,11 @@ const SignInScreen = props => {
                       //   setusernameError('* Please enter Username');
                       //   setpasswordError('* Please enter Password');
                       // }
-                      props.navigation.navigate(ScreenNames.Home);
+                      if (isCheck) {
+                        props.navigation.navigate(ScreenNames.DoctorHomeScreen);
+                      } else {
+                        props.navigation.navigate(ScreenNames.Home);
+                      }
                     }}
                   />
                 </View>

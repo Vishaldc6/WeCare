@@ -18,6 +18,7 @@ import Colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import {size} from '../../styles/size';
 import GlobalStyles from '../../styles/GlobalStyles';
+import {Images} from '../../assets/images';
 
 const Dots = ({selected}) => {
   return (
@@ -86,35 +87,20 @@ const OnboardingScreen = props => {
         pages={[
           {
             backgroundColor: Colors.white,
-            image: (
-              <Image
-                style={styles.image}
-                source={require('../../assets/images/Onboarding1.gif')}
-              />
-            ),
+            image: <Image style={styles.image} source={Images.onboarding1} />,
             title: 'Your Go-to Health Application',
             subtitle: 'Your complete healthcare companion, in your pocket.',
           },
           {
             backgroundColor: Colors.white,
-            image: (
-              <Image
-                style={styles.image}
-                source={require('../../assets/images/Onboarding2.png')}
-              />
-            ),
+            image: <Image style={styles.image} source={Images.onboarding2} />,
             title: 'Online Pharmacy',
             subtitle:
               "Order any medinice or health product and we'll deliver it for free.Enjoy discounts on everything.",
           },
           {
             backgroundColor: Colors.white,
-            image: (
-              <Image
-                style={styles.image}
-                source={require('../../assets/images/Onboarding3.png')}
-              />
-            ),
+            image: <Image style={styles.image} source={Images.onboarding3} />,
             title: 'Consult The Doctors',
             subtitle:
               'Find & book appointments with Doctors, Clinics, Hospitals & Diagnostic Tests. Ask free health questions to doctors.',

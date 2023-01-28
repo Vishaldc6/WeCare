@@ -13,4 +13,8 @@ export default ScreenName = {
   LabScreen: 'Labscreen',
   ReportScreen: 'ReportScreen',
   SearchScreen: 'SearchScreen',
+  MedicineScreen: 'MedicineScreen',
+
+  // doctor
+  DoctorHomeScreen: 'DoctorHomeScreen',
 };

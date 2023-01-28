@@ -16,6 +16,7 @@ import fonts from '../../styles/fonts';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import GlobalStyles from '../../styles/GlobalStyles';
+import {Images} from '../../assets/images';
 
 const ForgotPasswordScreen = props => {
   const [username, setusername] = useState('');
@@ -39,9 +40,7 @@ const ForgotPasswordScreen = props => {
 
   return (
     <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
-      <ImageBackground
-        source={require('../../assets/images/BackGroundImage.jpg')}
-        style={styles.bgImage}>
+      <ImageBackground source={Images.backgroundImage} style={styles.bgImage}>
         <SafeAreaView>
           <KeyboardAvoidingView>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -54,7 +53,7 @@ const ForgotPasswordScreen = props => {
                   borderRadius: 30,
                   padding: 20,
                   position: 'absolute',
-                  bottom: -size.height,
+                  bottom: -size.height - size.height / 12,
                 }}>
                 <Text style={fonts.h1}>Forgot Password</Text>
                 <View style={{height: 20}} />
@@ -111,7 +110,7 @@ const ForgotPasswordScreen = props => {
                       }
                     }}
                   />
-                  <View style={{height: 10}} />
+                  <View style={{height: size.height / 10}} />
                 </View>
               </View>
             </TouchableWithoutFeedback>

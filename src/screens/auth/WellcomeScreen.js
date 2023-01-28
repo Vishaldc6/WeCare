@@ -10,13 +10,12 @@ import CustomButton from '../../components/CustomButton';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
 import {size} from '../../styles/size';
 import GlobalStyles from '../../styles/GlobalStyles';
+import {Images} from '../../assets/images';
 
 const WellcomeScreen = props => {
   return (
     <View style={{...GlobalStyles.mainContainer, marginHorizontal: 0}}>
-      <ImageBackground
-        source={require('../../assets/images/BackGroundImage.jpg')}
-        style={styles.bgImage}>
+      <ImageBackground source={Images.backgroundImage} style={styles.bgImage}>
         <View style={{position: 'absolute', bottom: 50, width: size.width}}>
           <CustomButton
             title={'Sign in'}
