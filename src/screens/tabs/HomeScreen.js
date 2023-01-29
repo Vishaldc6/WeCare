@@ -51,9 +51,7 @@ const HomeScreen = props => {
 
       {/* SearchBar */}
       <CustomSearchBar
-        onPress={() => {
-          props.navigation.navigate(ScreenNames.SearchScreen);
-        }}
+        onPress={() => props.navigation.navigate(ScreenNames.SearchScreen)}
       />
 
       {/* Card View Container */}
@@ -98,15 +96,18 @@ const HomeScreen = props => {
             rest !
           </Text>
         </View>
-        <View style={styles.btn}>
-          <Text
-            style={{
-              ...fonts.h5,
-              color: colors.white,
-            }}>
-            Upload
-          </Text>
-        </View>
+        <TouchableWithoutFeedback
+          onPress={() => props.navigation.navigate(ScreenNames.SearchScreen)}>
+          <View style={styles.btn}>
+            <Text
+              style={{
+                ...fonts.h5,
+                color: colors.white,
+              }}>
+              Upload
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
         {/* <CustomButton title={'Upload'} /> */}
       </View>
       <View

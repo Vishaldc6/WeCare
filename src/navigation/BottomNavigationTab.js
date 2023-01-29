@@ -51,7 +51,7 @@ const BottomNavigationTab = () => {
           ),
         }}
       /> */}
-      {/* <Tab.Screen
+      <Tab.Screen
         name={ScreenNames.DoctorScreen}
         component={DoctorScreen}
         options={{
@@ -60,7 +60,7 @@ const BottomNavigationTab = () => {
             <Fontisto name="doctor" size={size.height / 35} color={color} />
           ),
         }}
-      /> */}
+      />
       {/* <Tab.Screen
         name={ScreenNames.CartScreen}
         component={CartScreen}
@@ -71,7 +71,7 @@ const BottomNavigationTab = () => {
           ),
         }}
       /> */}
-      {/* <Tab.Screen
+      <Tab.Screen
         name={ScreenNames.LabScreen}
         component={LabScreen}
         options={{
@@ -80,7 +80,7 @@ const BottomNavigationTab = () => {
             <Fontisto name="laboratory" size={size.height / 35} color={color} />
           ),
         }}
-      /> */}
+      />
       {/* <Tab.Screen
         name={ScreenNames.SearchScreen}
         component={SearchScreen}

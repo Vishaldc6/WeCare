@@ -4,14 +4,17 @@ import GlobalStyles from '../styles/GlobalStyles';
 import CustomHeader from '../components/CustomHeader';
 import CustomSearchBar from '../components/CustomSearchBar';
 import ScreenNames from '../navigation/screenNames/ScreenNames';
+import {useNavigation} from '@react-navigation/native';
 
 const MedicineScreen = props => {
+  const navigation = useNavigation();
+
   return (
     <View style={GlobalStyles.mainContainer}>
       <CustomHeader title="Medicines" />
       <CustomSearchBar
         onPress={() => {
-          //   props.navigation.push(ScreenNames.SearchScreen);
+          navigation.navigate('SearchScreen');
         }}
       />
       <Text>MedicineScreen</Text>

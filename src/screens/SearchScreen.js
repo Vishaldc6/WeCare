@@ -6,7 +6,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 const SearchScreen = () => {
   return (
     <View style={GlobalStyles.mainContainer}>
-      <CustomSearchBar />
+      {/* <CustomSearchBar /> */}
       <Text>SearchScreen</Text>
     </View>
   );
