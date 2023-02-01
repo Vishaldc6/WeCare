@@ -12,8 +12,8 @@ const CustomButton = props => {
           backgroundColor: props.secondary
             ? Colors.white
             : Colors.primary_color,
-          height: size.height / 13,
-          // width: size.width/1.06,
+          // height: size.height / 13,
+          // width: size.width / 1.06,
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 15,
@@ -22,6 +22,7 @@ const CustomButton = props => {
         <Text
           style={{
             ...fonts.h5,
+            margin: 20,
             color: props.secondary ? Colors.primary_color : Colors.white,
           }}>
           {props.title}

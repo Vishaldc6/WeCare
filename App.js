@@ -12,6 +12,8 @@ import SearchScreen from './src/screens/SearchScreen';
 import DoctorScreen from './src/screens/tabs/DoctorScreen';
 import DoctorHomeScreen from './src/screens/doctor/DoctorHomeScreen';
 import MedicineScreen from './src/screens/MedicineScreen';
+import CategoryScreen from './src/screens/CategoryScreen';
+import ProductScreen from './src/screens/ProductScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +59,14 @@ const App = () => {
         <Stack.Screen
           name={ScreenNames.MedicineScreen}
           component={MedicineScreen}
+        />
+        <Stack.Screen
+          name={ScreenNames.CategoryScreen}
+          component={CategoryScreen}
+        />
+        <Stack.Screen
+          name={ScreenNames.ProductScreen}
+          component={ProductScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -97,7 +97,7 @@ const BottomNavigationTab = () => {
         options={{
           tabBarLabel: 'Account',
           tabBarIcon: ({focused, color}) => (
-            <Fontisto name="person" size={size.height / 25} color={color} />
+            <Fontisto name="person" size={size.height / 35} color={color} />
           ),
         }}
       />

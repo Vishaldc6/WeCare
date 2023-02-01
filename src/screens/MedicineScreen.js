@@ -13,6 +13,7 @@ const MedicineScreen = props => {
     <View style={GlobalStyles.mainContainer}>
       <CustomHeader title="Medicines" />
       <CustomSearchBar
+        placeholder="Search Medicine.."
         onPress={() => {
           navigation.navigate('SearchScreen');
         }}

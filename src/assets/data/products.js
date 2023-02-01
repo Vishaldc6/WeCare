@@ -1,0 +1,108 @@
+import {Images} from '../images';
+
+export const products = [
+  {
+    id: 1,
+    name: 'Baby Diaper',
+    category_id: 2,
+    price: '200',
+    quantity: '25',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '10',
+    rate: '4.0',
+    discount: '15',
+    image: Images.babyDiaper,
+  },
+  {
+    id: 2,
+    name: 'Bournvita',
+    category_id: 6,
+    price: '150',
+    quantity: '20',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '25',
+    rate: '4.5',
+    discount: '10',
+    image: Images.bournevita,
+  },
+  {
+    id: 3,
+    name: 'Complan',
+    category_id: 6,
+    price: '180',
+    quantity: '22',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '21',
+    rate: '4.6',
+    discount: '12',
+    image: Images.complan,
+  },
+  {
+    id: 4,
+    name: 'Whey Protein',
+    category_id: 6,
+    price: '400',
+    quantity: '30',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '100',
+    rate: '4.8',
+    discount: '35',
+    image: Images.whey,
+  },
+  {
+    id: 5,
+    name: 'Baby Powder',
+    category_id: 2,
+    price: '100',
+    quantity: '15',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '16',
+    rate: '4.1',
+    discount: '5',
+    image: Images.babyPowder,
+  },
+  {
+    id: 6,
+    name: 'Face Wash',
+    category_id: 5,
+    price: '230',
+    quantity: '25',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '35',
+    rate: '3.1',
+    discount: '50',
+    image: Images.faceWash,
+  },
+  {
+    id: 7,
+    name: 'Sunscreen',
+    category_id: 5,
+    price: '130',
+    quantity: '20',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '30',
+    rate: '3.0',
+    discount: '20',
+    image: Images.sunscreen,
+  },
+  {
+    id: 8,
+    name: 'Baby Soap',
+    category_id: 2,
+    price: '80',
+    quantity: '150',
+    description:
+      'Nisi quis nisi ex consequat incididunt tempor esse dolor consequat in est velit magna. Non fugiat dolore minim do occaecat. Dolor esse laboris deserunt labore tempor officia veniam sunt nostrud anim non dolor et occaecat. Pariatur excepteur cillum sunt tempor ullamco excepteur deserunt culpa.',
+    rating: '40',
+    rate: '3.5',
+    discount: '15',
+    image: Images.babySoap,
+  },
+];

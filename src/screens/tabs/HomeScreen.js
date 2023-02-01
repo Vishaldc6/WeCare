@@ -4,6 +4,8 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
   Image,
+  FlatList,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import GlobalStyles from '../../styles/GlobalStyles';
@@ -17,6 +19,10 @@ import CustomButton from '../../components/CustomButton';
 import ScreenNames from '../../navigation/screenNames/ScreenNames';
 import Swiper from 'react-native-swiper';
 import {Images} from '../../assets/images';
+import {categories} from '../../assets/data/categories';
+import {useNavigation} from '@react-navigation/native';
+import {products} from '../../assets/data/products';
+import CustomHeading from '../../components/CustomHeading';
 
 const Card = ({title, icon, onPress}) => (
   <TouchableWithoutFeedback onPress={onPress}>
@@ -43,7 +49,58 @@ const Banner = ({image}) => (
   </View>
 );
 
+const CategoryCard = ({item}) => {
+  return (
+    <View style={styles.categoryCard}>
+      <Image
+        source={item.image}
+        style={{height: 100, width: 100, alignSelf: 'center'}}
+        resizeMode={'stretch'}
+      />
+      <Text style={{...fonts.h4, alignSelf: 'center'}}>{item.name}</Text>
+    </View>
+  );
+};
+
+const ProductCard = ({item}) => {
+  return (
+    <View style={styles.categoryCard}>
+      <Image source={item.image} style={{height: 120, width: 120}} />
+      <Text style={fonts.h4}>{item.name}</Text>
+      <Text style={{...fonts.h3, color: colors.darkgray}}>
+        {item.quantity} items
+      </Text>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <Text style={{...fonts.h3, color: colors.darkgray}}>{item.rate} </Text>
+        <Text style={{...fonts.h3, color: colors.darkgray}}>
+          ({item.rating} ratings)
+        </Text>
+      </View>
+      <View
+        style={{flexDirection: 'row', alignItems: 'center', marginVertical: 5}}>
+        <Text style={fonts.h6}>Rs.{item.price}</Text>
+        <Text style={fonts.h3}> {item.discount} % off</Text>
+      </View>
+      {/* <CustomButton title={'Add to Cart'} /> */}
+      <View
+        style={{
+          flex: 1,
+          borderWidth: 1,
+          borderRadius: 10,
+          borderColor: colors.primary_color,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text style={{...fonts.h6, margin: 10, color: colors.primary_color}}>
+          Add to Cart
+        </Text>
+      </View>
+    </View>
+  );
+};
+
 const HomeScreen = props => {
+  const navigation = useNavigation();
   return (
     <View style={GlobalStyles.mainContainer}>
       {/* Header */}
@@ -51,78 +108,116 @@ const HomeScreen = props => {
 
       {/* SearchBar */}
       <CustomSearchBar
-        onPress={() => props.navigation.navigate(ScreenNames.SearchScreen)}
+        placeholder="Search Medicine.."
+        onPress={() => {
+          navigation.navigate(ScreenNames.SearchScreen);
+        }}
       />
-
-      {/* Card View Container */}
-      <View style={styles.cardContainer}>
-        <Card
-          title={'Lab Test'}
-          icon={'laboratory'}
-          onPress={() => {
-            console.log('Lab Test Page');
-          }}
-        />
-        <Card
-          title={'Medicines'}
-          icon={'pills'}
-          onPress={() => {
-            console.log('Medicine Page');
-            props.navigation.navigate(ScreenNames.MedicineScreen);
-          }}
-        />
-        <Card
-          title={'Health Product'}
-          icon={'shopping-store'}
-          onPress={() => {
-            console.log('Health Product Page');
-          }}
-        />
-        <Card
-          title={'Consult Doctor'}
-          icon={'doctor'}
-          onPress={() => {
-            console.log('Consult Doctor Page');
-          }}
-        />
-      </View>
-
-      {/* Prescription Upload */}
-      <View style={styles.prescriptionContainer}>
-        <View style={{flex: 1}}>
-          <Text style={fonts.h6}>Order quickly with a prescription</Text>
-          <Text style={fonts.h3}>
-            Just upload the prescription and tell us what you need. We do the
-            rest !
-          </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Card View Container */}
+        <View style={styles.cardContainer}>
+          <Card
+            title={'Lab Test'}
+            icon={'laboratory'}
+            onPress={() => {
+              console.log('Lab Test Page');
+            }}
+          />
+          <Card
+            title={'Medicines'}
+            icon={'pills'}
+            onPress={() => {
+              console.log('Medicine Page');
+              props.navigation.navigate(ScreenNames.MedicineScreen);
+            }}
+          />
+          <Card
+            title={'Health Product'}
+            icon={'shopping-store'}
+            onPress={() => {
+              console.log('Health Product Page');
+            }}
+          />
+          <Card
+            title={'Consult Doctor'}
+            icon={'doctor'}
+            onPress={() => {
+              console.log('Consult Doctor Page');
+            }}
+          />
         </View>
-        <TouchableWithoutFeedback
-          onPress={() => props.navigation.navigate(ScreenNames.SearchScreen)}>
-          <View style={styles.btn}>
-            <Text
-              style={{
-                ...fonts.h5,
-                color: colors.white,
-              }}>
-              Upload
+
+        {/* Prescription Upload */}
+        <View style={styles.prescriptionContainer}>
+          <View style={{flex: 1}}>
+            <Text style={fonts.h6}>Order quickly with a prescription</Text>
+            <Text style={fonts.h3}>
+              Just upload the prescription and tell us what you need. We do the
+              rest !
             </Text>
           </View>
-        </TouchableWithoutFeedback>
-        {/* <CustomButton title={'Upload'} /> */}
-      </View>
-      <View
-        style={{
-          marginVertical: 5,
-          height: size.height / 5,
-          // backgroundColor: 'red',
-        }}>
-        <Swiper dotStyle={{bottom: -45}} activeDotStyle={{bottom: -45}}>
-          <Banner image={Images.banners5} />
-          <Banner image={Images.banners} />
-          <Banner image={Images.banners6} />
-        </Swiper>
-      </View>
-      <Text>HomeScreen</Text>
+          <TouchableWithoutFeedback
+            onPress={() => props.navigation.navigate(ScreenNames.SearchScreen)}>
+            <View style={styles.btn}>
+              <Text
+                style={{
+                  ...fonts.h5,
+                  color: colors.white,
+                }}>
+                Upload
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          {/* <CustomButton title={'Upload'} /> */}
+        </View>
+
+        {/* Banners */}
+        <View style={styles.bannerContainer}>
+          <Swiper
+            autoplay
+            dotStyle={{bottom: -40}}
+            activeDotStyle={{bottom: -40}}>
+            <Banner image={Images.banners5} />
+            <Banner image={Images.banners} />
+            <Banner image={Images.banners6} />
+          </Swiper>
+        </View>
+        {/* Category */}
+        <CustomHeading
+          header1={'Popular Categories'}
+          header2={'see more >'}
+          onPress={() => {
+            props.navigation.navigate(ScreenNames.CategoryScreen);
+          }}
+        />
+
+        <FlatList
+          style={{marginVertical: 5}}
+          scrollEnabled={false}
+          numColumns={3}
+          data={categories}
+          renderItem={({item}) => <CategoryCard item={item} />}
+        />
+
+        <CustomHeading
+          header1={'Popular Products'}
+          header2={'see more >'}
+          onPress={() => {
+            props.navigation.navigate(ScreenNames.ProductScreen);
+          }}
+        />
+        <FlatList
+          style={{marginVertical: 5}}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          // scrollEnabled={false}
+          data={products}
+          renderItem={({item, index}) =>
+            index < 5 && <ProductCard item={item} />
+          }
+        />
+        <Text>HomeScreen</Text>
+      </ScrollView>
     </View>
   );
 };
@@ -164,6 +259,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  bannerContainer: {
+    marginVertical: 5,
+    height: size.height / 4.5,
+    // backgroundColor: 'red',
+    padding: 10,
+  },
+  categoryCard: {
+    flex: 1,
+    // backgroundColor: 'blue',
+    margin: 5,
+    // justifyContent: 'center',
+    // alignContent: 'center',
+    alignSelf: 'center',
   },
 });
 

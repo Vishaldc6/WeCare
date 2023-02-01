@@ -14,6 +14,8 @@ export default ScreenName = {
   ReportScreen: 'ReportScreen',
   SearchScreen: 'SearchScreen',
   MedicineScreen: 'MedicineScreen',
+  CategoryScreen: 'CategoryScreen',
+  ProductScreen: 'ProductScreen',
 
   // doctor
   DoctorHomeScreen: 'DoctorHomeScreen',

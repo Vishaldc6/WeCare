@@ -13,7 +13,7 @@ const CustomSearchBar = props => {
       )}
       <TextInput
         onPressIn={props.onPress}
-        placeholder="Search medicine"
+        placeholder={props.placeholder}
         style={{...fonts.h3, flex: 1}}
       />
       <View style={{width: 15}} />

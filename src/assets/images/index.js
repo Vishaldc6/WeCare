@@ -10,4 +10,22 @@ export const Images = {
   banners4: require('../images/banners4.jpg'),
   banners5: require('../images/banners5.png'),
   banners6: require('../images/banners6.png'),
+
+  //categories
+  ayurvedic: require('../images/categories/ayurvedic.jpg'),
+  babyCare: require('../images/categories/babyCare.jpg'),
+  nutritionalDrinks: require('../images/categories/nutritionalDrinks.jpg'),
+  painRelief: require('../images/categories/painRelief.jpg'),
+  skinCare: require('../images/categories/skinCare.jpg'),
+  winterCare: require('../images/categories/winterCare.jpg'),
+
+  //products
+  babyDiaper: require('../images/products/babyDiaper.jpg'),
+  babyPowder: require('../images/products/babyPowder.jpg'),
+  babySoap: require('../images/products/babySoap.jpg'),
+  bournevita: require('../images/products/bournevita.jpg'),
+  complan: require('../images/products/complan.jpg'),
+  faceWash: require('../images/products/faceWash.jpg'),
+  sunscreen: require('../images/products/sunscreen.jpg'),
+  whey: require('../images/products/whey.jpg'),
 };
